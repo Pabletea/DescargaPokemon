@@ -8,12 +8,15 @@ public class ObtenerPokemonsTest {
     @Test
     public void probarPokemonExceptionRed(){
         // TODO que se lanza la exception correcta
+        Assertions.assertThrows(ObtenerPokemonsRequest.ExceptionEnRed.class,() -> ObtenerPokemonsRequest.Companion.get(-1,1));
 
     }
 
     @Test
     public void probarPokemonExceptionID(){
         // TODO que se lanza la exception correcta
+        Assertions.assertThrows(ObtenerPokemonsRequest.ExceptionEnId.class, () -> ObtenerPokemonsRequest.Companion.get(2,1));
+
 
     }
 
