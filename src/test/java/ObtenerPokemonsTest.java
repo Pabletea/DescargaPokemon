@@ -26,8 +26,10 @@ public class ObtenerPokemonsTest {
         //  Estos números deberían poder cambiar fácilmente
         int minId = 1;
         int maxId = 10;
+        Pokemon[] array = ObtenerPokemonsRequest.Companion.get(1,10);
 
-
+        for(Pokemon poke : array)
+            System.out.println(poke.getName());
 
 
 
