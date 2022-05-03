@@ -27,6 +27,12 @@ public class ObtenerPokemonsTest {
         int minId = 1;
         int maxId = 10;
 
+
+
+
+
+
+
     }
 
     @Test
@@ -36,5 +42,15 @@ public class ObtenerPokemonsTest {
         int minId = 140;
         int maxId = 150;
 
+
+        Pokemon[] array = ObtenerPokemonsRequest.Companion.get(140,150);
+
+        for(Pokemon poke : array){
+            Pokemon pokemon = ObtenerPokemonRequest.Companion.get(minId);
+            System.out.println(poke.getName());
+            Assertions.assertEquals(poke.getName(),pokemon.getName());
+            minId++;
+
+        }
     }
 }
