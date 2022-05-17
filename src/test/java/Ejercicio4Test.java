@@ -109,6 +109,18 @@ class Ejercicio4Test {
         Pokemon[] pokemonActuales = ej.getPokemonNombreMasLargoQue(-1);
         Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
     }
+    @Test
+    void pokemonsNombreMasLargoQue02(){
+        Pokemon[] pokemonEsperados = ej.arrayPokemons;
+        Pokemon[] pokemonActuales = ej.getPokemonNombreMasLargoQue(0);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+    }
+    @Test
+    void pokemonsNombreMasLargoQue03(){
+        Pokemon[] pokemonEsperados = {};
+        Pokemon[] pokemonActuales = ej.getPokemonNombreMasLargoQue(10000000);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+    }
 
 
 
@@ -120,6 +132,12 @@ class Ejercicio4Test {
                 new Pokemon(20, 3, "venusaur", 1000)
         };
         Pokemon[] pokemonActuales = ej.getPokemonQueContengaLasSiguientesLetras("saur");
+        Assertions.assertArrayEquals(pokemonEsperados, pokemonActuales);
+    }
+    @Test
+    void getPokemonQueContengaLasSiguientesLetras02() {
+        Pokemon[] pokemonEsperados = {};
+        Pokemon[] pokemonActuales = ej.getPokemonQueContengaLasSiguientesLetras("");
         Assertions.assertArrayEquals(pokemonEsperados, pokemonActuales);
     }
 

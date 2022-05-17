@@ -32,7 +32,7 @@ public class Ejercicio4 {
         for(Pokemon pokemon : result5){
             System.out.println(pokemon);
         }
-        Pokemon[] result6 = getPokemonQueContengaLasSiguientesLetras("iv");
+        Pokemon[] result6 = getPokemonQueContengaLasSiguientesLetras("saur");
         System.out.println("Pokemon que contiene las siguientes letras");
         for(Pokemon pokemon : result6){
             System.out.println(pokemon);
@@ -139,7 +139,7 @@ public class Ejercicio4 {
 
         return out2;
     }
-    public Pokemon[] getPokemonNombreMasCortoQue(int longitudDelTexto){
+    public Pokemon[] getPokemonNombreMasCortoQue(int longitudDelTexto) {
 
         Pokemon[] out = new Pokemon[arrayPokemons.length];
         int i = 0;
@@ -150,6 +150,8 @@ public class Ejercicio4 {
                 i++;
             }
         }
+
+
         Pokemon[] out2 = new Pokemon[i];
 
         i = 0;
@@ -164,26 +166,25 @@ public class Ejercicio4 {
         return out2;
     }
     public Pokemon[] getPokemonQueContengaLasSiguientesLetras(String letras){
-        String[] letrasAr = letras.split("");
+
         Pokemon[] out = new Pokemon[arrayPokemons.length];
         int i=0;
-        for(Pokemon pokemon :arrayPokemons){
-            for(i = 0;i <letras.length();i++){
-                if(pokemon.getName().contains(letrasAr[i])){
-                    out[i]=pokemon;
-                }
+        for(Pokemon pokemon :arrayPokemons) {
+            if (pokemon.getName().contains(letras)) {
+                out[i] = pokemon;
             }
-
         }
+
+
         Pokemon[] out2= new Pokemon[i];
         i = 0;
-        for (Pokemon pokemon : out) {
-            if (pokemon != null) {
-                out2[i] = pokemon;
-                i++;
+            for (Pokemon pokemon : out) {
+                if (pokemon != null) {
+                    out2[i] = pokemon;
+                    i++;
 
+                }
             }
-        }
 
         return out2;
 
