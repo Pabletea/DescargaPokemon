@@ -66,6 +66,50 @@ class Ejercicio4Test {
 
 
     }
+    @Test
+    void pokemonsMenosGordosQue02(){
+        Pokemon[] pokemonEsperados ={};
+        Pokemon[] pokemonActuales = ej.getPokemonMenosGordo(0);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+
+
+    }
+    @Test
+    void pokemonsMenosGordosQue03(){
+        Pokemon[] pokemonEsperados = ej.arrayPokemons;
+        Pokemon[] pokemonActuales = ej.getPokemonMenosGordo(100000);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+
+
+    }
+    @Test
+    void pokemonsEntrePeso(){
+        Pokemon[] pokemonEsperados = {};
+        Pokemon[] pokemonActuales = ej.getPokemonPesoEntre(0,0);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+
+
+    }
+    @Test
+    void pokemonsEntrePeso02(){
+        Pokemon[] pokemonEsperados = ej.arrayPokemons;
+        Pokemon[] pokemonActuales = ej.getPokemonPesoEntre(100000,0);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+
+    }
+    @Test
+    void pokemonsEntrePeso03(){
+        Pokemon[] pokemonEsperados = null;
+        Pokemon[] pokemonActuales = ej.getPokemonPesoEntre(0,-1);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+    }
+    @Test
+    void pokemonsNombreMasLargoQue(){
+        Pokemon[] pokemonEsperados = null;
+        Pokemon[] pokemonActuales = ej.getPokemonNombreMasLargoQue(-1);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+    }
+
 
 
     @Test

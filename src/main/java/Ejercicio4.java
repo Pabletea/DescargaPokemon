@@ -88,6 +88,10 @@ public class Ejercicio4 {
     public Pokemon[] getPokemonPesoEntre(Integer pesoMx, Integer pesoMn){
             Pokemon[] out = new Pokemon[arrayPokemons.length];
         int i = 0;
+        if(pesoMn <0 ||pesoMx <0){
+            return null;
+
+        }
         for (Pokemon pokemon : arrayPokemons) {
             if (pokemon.getWeight() < pesoMx && pokemon.getWeight() > pesoMn) {
                 out[i] = pokemon;
@@ -112,6 +116,9 @@ public class Ejercicio4 {
 
         Pokemon[] out = new Pokemon[arrayPokemons.length];
         int i = 0;
+        if(longitudDelTexto <0){
+            return null;
+        }
         for (Pokemon pokemon : arrayPokemons) {
             String nombre = pokemon.getName();
             if (nombre.length() > longitudDelTexto) {
