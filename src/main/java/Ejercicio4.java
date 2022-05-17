@@ -17,6 +17,26 @@ public class Ejercicio4 {
         for (Pokemon pokemon : result2) {
             System.out.println(pokemon);
         }
+        Pokemon [] result3 = getPokemonPesoEntre(500,200);
+        System.out.println("Pokemons entre pesos");
+        for (Pokemon pokemon : result3){
+            System.out.println(pokemon);
+        }
+        Pokemon[] result4 = getPokemonNombreMasLargoQue(7);
+        System.out.println("Pokemon con nombre mas largo que:");
+        for (Pokemon pokemon : result4){
+            System.out.println(pokemon);
+        }
+        Pokemon[] result5 = getPokemonNombreMasCortoQue(8);
+        System.out.println("Pokemon mas corto que:");
+        for(Pokemon pokemon : result5){
+            System.out.println(pokemon);
+        }
+        Pokemon[] result6 = getPokemonQueContengaLasSiguientesLetras("iv");
+        System.out.println("Pokemon que contiene las siguientes letras");
+        for(Pokemon pokemon : result6){
+            System.out.println(pokemon);
+        }
     }
 
     public Pokemon[] pokemonMasGordosQue(Integer peso) {
@@ -112,6 +132,57 @@ public class Ejercicio4 {
 
         return out2;
     }
+    public Pokemon[] getPokemonNombreMasCortoQue(int longitudDelTexto){
+
+        Pokemon[] out = new Pokemon[arrayPokemons.length];
+        int i = 0;
+        for (Pokemon pokemon : arrayPokemons) {
+            String nombre = pokemon.getName();
+            if (nombre.length() < longitudDelTexto) {
+                out[i] = pokemon;
+                i++;
+            }
+        }
+        Pokemon[] out2 = new Pokemon[i];
+
+        i = 0;
+        for (Pokemon pokemon : out) {
+            if (pokemon != null) {
+                out2[i] = pokemon;
+                i++;
+
+            }
+        }
+
+        return out2;
+    }
+    public Pokemon[] getPokemonQueContengaLasSiguientesLetras(String letras){
+        String[] letrasAr = letras.split("");
+        Pokemon[] out = new Pokemon[arrayPokemons.length];
+        int i=0;
+        for(Pokemon pokemon :arrayPokemons){
+            for(i = 0;i <letras.length();i++){
+                if(pokemon.getName().contains(letrasAr[i])){
+                    out[i]=pokemon;
+                }
+            }
+
+        }
+        Pokemon[] out2= new Pokemon[i];
+        i = 0;
+        for (Pokemon pokemon : out) {
+            if (pokemon != null) {
+                out2[i] = pokemon;
+                i++;
+
+            }
+        }
+
+        return out2;
+
+
+    }
+
 
 
 }
