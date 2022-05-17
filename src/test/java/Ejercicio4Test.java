@@ -35,6 +35,38 @@ class Ejercicio4Test {
         Pokemon[] pokemonActuales = ej.pokemonMasGordosQue(250);
         Assertions.assertArrayEquals(pokemonEsperados, pokemonActuales);
     }
+    @Test
+    void pokemonMasGordosQue02() {
+        Pokemon[] pokemonEsperados = {};
+        Pokemon[] pokemonActuales = ej.pokemonMasGordosQue(1000000000);
+        Assertions.assertArrayEquals(pokemonEsperados, pokemonActuales);
+    }
+
+    @Test
+    void pokemonsMasGordosQue03(){
+        Pokemon[] pokemonEsperados = ej.arrayPokemons;
+        Pokemon[] pokemonActuales = ej.pokemonMasGordosQue(0);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+
+
+    }
+
+    @Test
+    void pokemonsMenosGordosQue01(){
+        Pokemon[] pokemonEsperados ={
+                new Pokemon(7, 1, "bulbasaur", 69),
+                new Pokemon(10, 2, "ivysaur", 130),
+                new Pokemon(6, 4, "charmander", 85),
+                new Pokemon(11, 5, "charmeleon", 190),
+                new Pokemon(5, 7, "squirtle", 90),
+                new Pokemon(10, 8, "wartortle", 225)
+        };
+        Pokemon[] pokemonActuales = ej.getPokemonMenosGordo(250);
+        Assertions.assertArrayEquals(pokemonEsperados,pokemonActuales);
+
+
+    }
+
 
     @Test
     void getPokemonQueContengaLasSiguientesLetras() {
