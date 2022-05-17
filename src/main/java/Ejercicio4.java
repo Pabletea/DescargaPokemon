@@ -64,4 +64,54 @@ public class Ejercicio4 {
 
         return out2;
     }
+
+    public Pokemon[] getPokemonPesoEntre(Integer pesoMx, Integer pesoMn){
+            Pokemon[] out = new Pokemon[arrayPokemons.length];
+        int i = 0;
+        for (Pokemon pokemon : arrayPokemons) {
+            if (pokemon.getWeight() < pesoMx && pokemon.getWeight() > pesoMn) {
+                out[i] = pokemon;
+                i++;
+            }
+        }
+        Pokemon[] out2 = new Pokemon[i];
+
+        i = 0;
+        for (Pokemon pokemon : out) {
+            if (pokemon != null) {
+                out2[i] = pokemon;
+                i++;
+
+            }
+        }
+
+        return out2;
+
+    }
+    public Pokemon[] getPokemonNombreMasLargoQue(int longitudDelTexto){
+
+        Pokemon[] out = new Pokemon[arrayPokemons.length];
+        int i = 0;
+        for (Pokemon pokemon : arrayPokemons) {
+            String nombre = pokemon.getName();
+            if (nombre.length() > longitudDelTexto) {
+                out[i] = pokemon;
+                i++;
+            }
+        }
+        Pokemon[] out2 = new Pokemon[i];
+
+        i = 0;
+        for (Pokemon pokemon : out) {
+            if (pokemon != null) {
+                out2[i] = pokemon;
+                i++;
+
+            }
+        }
+
+        return out2;
+    }
+
+
 }
